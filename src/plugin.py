@@ -11,7 +11,9 @@ class CaseInsensitiveFiles(BasePlugin):
     # TODO: Improve regex pattern to detect brackets and braces
     pattern = re.compile(r"\[(.*?)\]\((.*?)\)", flags=re.IGNORECASE)
 
-    def on_page_markdown(self, markdown: str, page: Page, config: MkDocsConfig, files: Files):
+    def on_page_markdown(
+        self, markdown: str, page: Page, config: MkDocsConfig, files: Files
+    ):
         # Duplicated code from mkdocs.structure.pages._RelativePathTreeprocessor path_to_url
         # TODO: Figure out a way to patch mkdocs' function
         links = re.findall(self.pattern, markdown)

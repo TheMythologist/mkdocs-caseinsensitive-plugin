@@ -21,6 +21,7 @@ black = "^22.10.0"
 isort = "^5.10.1"
 flake8 = "^6.0.0"
 pyproject-flake8 = "^6.0.0"
+mypy = "^0.991"
 
 [tool.flake8]
 max-line-length = 88
