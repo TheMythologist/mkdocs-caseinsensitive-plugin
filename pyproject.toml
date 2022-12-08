@@ -1,11 +1,11 @@
 [tool.poetry]
 name = "mkdocs-caseinsensitive-plugin"
-version = "0.1.0"
+version = "0.2.0"
 description = ""
 authors = ["TheMythologist <leekaixuan2001@gmail.com>"]
 license = "AGPL V3"
 readme = "README.md"
-packages = [{include = "src"}]
+packages = [{include = "mkdocs_caseinsensitive_plugin"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
@@ -14,7 +14,7 @@ mkdocs = "^1.4.2"
 [tool.poetry.plugins]
 
 [tool.poetry.plugins."mkdocs.plugins"]
-caseinsensitivefiles = "src:CaseInsensitiveFiles"
+caseinsensitivefiles = "mkdocs_caseinsensitive_plugin:CaseInsensitiveFiles"
 
 [tool.poetry.group.dev.dependencies]
 black = "^22.10.0"
