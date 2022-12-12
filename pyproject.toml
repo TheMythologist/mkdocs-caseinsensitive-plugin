@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-caseinsensitive-plugin"
-version = "0.2.0"
+version = "0.3.0"
 description = ""
 authors = ["TheMythologist <leekaixuan2001@gmail.com>"]
 license = "AGPL V3"
