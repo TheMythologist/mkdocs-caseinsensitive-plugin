@@ -16,9 +16,10 @@ class CaseInsensitiveFiles(BasePlugin):
     ):
         # Duplicated code from mkdocs.structure.pages._RelativePathTreeprocessor path_to_url
         # TODO: Figure out a way to patch mkdocs' function
-        links = re.findall(self.pattern, markdown)
+        links: list[tuple[str, str]] = re.findall(self.pattern, markdown)
         for text, link in links:
-            scheme, netloc, path, query, fragment = urlsplit(link)
+            actual_link, sep, inner_link = link.partition("#")
+            scheme, netloc, path, query, fragment = urlsplit(actual_link)
             # Ignore URLs unless they are a relative link to a source file.
             # AMP_SUBSTITUTE is used internally by Markdown only for email.
             # No '.' in the last part of a path indicates path does not point to a file.
@@ -36,6 +37,10 @@ class CaseInsensitiveFiles(BasePlugin):
                 for key, value in files.src_uris.items():
                     stripped = os.path.normpath(key).lstrip("/")
                     if stripped.casefold() == target_uri.casefold():
-                        markdown = re.sub(re.escape(f"[{text}]({link})"), key, markdown)
+                        markdown = re.sub(
+                            re.escape(f"[{text}]({actual_link}{sep}{inner_link})"),
+                            key,
+                            markdown,
+                        )
                         break
         return markdown
