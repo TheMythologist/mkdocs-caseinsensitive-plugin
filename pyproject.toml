@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mkdocs-caseinsensitive-plugin"
-version = "0.3.0"
+version = "0.4.0"
 description = ""
 authors = ["TheMythologist <leekaixuan2001@gmail.com>"]
 license = "AGPL V3"
@@ -10,6 +10,7 @@ packages = [{include = "mkdocs_caseinsensitive_plugin"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs = "^1.4.2"
+regex = "^2022.10.31"
 
 [tool.poetry.plugins]
 

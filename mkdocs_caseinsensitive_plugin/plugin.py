@@ -4,20 +4,20 @@ from mkdocs.config.defaults import MkDocsConfig
 from mkdocs.plugins import BasePlugin
 from mkdocs.structure.files import Files
 from mkdocs.structure.pages import Page
-import re
+import regex as re
 
 
 class CaseInsensitiveFiles(BasePlugin):
-    # TODO: Improve regex pattern to detect brackets and braces
-    pattern = re.compile(r"\[(.*?)\]\((.*?)\)", flags=re.IGNORECASE)
+    # Reference: https://stackoverflow.com/questions/67940820/how-to-extract-markdown-links-with-a-regex
+    pattern = re.compile(r"\[([^][]+)\](\(((?:[^()]+|(?2))+)\))", flags=re.IGNORECASE)
 
     def on_page_markdown(
         self, markdown: str, page: Page, config: MkDocsConfig, files: Files
     ):
         # Duplicated code from mkdocs.structure.pages._RelativePathTreeprocessor path_to_url
         # TODO: Figure out a way to patch mkdocs' function
-        links: list[tuple[str, str]] = re.findall(self.pattern, markdown)
-        for text, link in links:
+        links: list[tuple[str, str, str]] = re.findall(self.pattern, markdown)
+        for text, _, link in links:
             actual_link, sep, inner_link = link.partition("#")
             scheme, netloc, path, query, fragment = urlsplit(actual_link)
             # Ignore URLs unless they are a relative link to a source file.
