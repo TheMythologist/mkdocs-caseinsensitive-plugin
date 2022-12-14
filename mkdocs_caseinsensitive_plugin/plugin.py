@@ -18,7 +18,7 @@ class CaseInsensitiveFiles(BasePlugin):
     ):
         # Duplicated code from mkdocs.structure.pages._RelativePathTreeprocessor path_to_url
         # TODO: Figure out a way to patch mkdocs' function
-        links: list[tuple[str, str, str]] = re.findall(self.pattern, markdown)
+        links: list[tuple[str, str, str, str]] = re.findall(self.pattern, markdown)
         for _, text, _, link in links:
             actual_link, sep, inner_link = link.partition("#")
             scheme, netloc, path, query, fragment = urlsplit(actual_link)
