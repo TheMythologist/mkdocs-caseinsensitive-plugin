@@ -13,13 +13,13 @@ def test_regex_basic():
     sample_markdown = open_file("test_regex_basic.md")
     found = re.findall(pattern, sample_markdown)
     assert len(found) == 1
-    assert found[0][0] == "text"
-    assert found[0][-1] == "./file.md"
+    assert found[0][1] == "text"
+    assert found[0][3] == "./file.md"
 
 
 def test_recursive_basic():
     sample_markdown = open_file("test_regex_recursive.md")
     found = re.findall(pattern, sample_markdown)
     assert len(found) == 1
-    assert found[0][0] == "recursive text"
-    assert found[0][-1] == "./recursive(recursive_link(wow)).md"
+    assert found[0][1] == "recursive text [that has cursed brackets]"
+    assert found[0][3] == "./recursive(recursive_link(wow)).md"
