@@ -440,14 +440,14 @@ files = [
 
 [[package]]
 name = "pyproject-flake8"
-version = "6.0.0"
+version = "6.0.0.post1"
 description = "pyproject-flake8 (`pflake8`), a monkey patching wrapper to connect flake8 with pyproject.toml configuration"
 category = "dev"
 optional = false
 python-versions = ">=3.8.1"
 files = [
-    {file = "pyproject-flake8-6.0.0.tar.gz", hash = "sha256:dcaf776546ab520309df86fe32a0e375fc426ca02bdb0f580d48dc6d9b74a7ec"},
-    {file = "pyproject_flake8-6.0.0-py3-none-any.whl", hash = "sha256:618a9d21c2b667c6588cfece0583fb4cb8b8101697876d62197f27223b03cf1c"},
+    {file = "pyproject-flake8-6.0.0.post1.tar.gz", hash = "sha256:d43421caca0ef8a672874405fe63c722b0333e3c22c41648c6df60f21bab2b6b"},
+    {file = "pyproject_flake8-6.0.0.post1-py3-none-any.whl", hash = "sha256:bdc7ca9b967b9724983903489b8943b72c668178fb69f03e8774ec74f6a13782"},
 ]
 
 [package.dependencies]
