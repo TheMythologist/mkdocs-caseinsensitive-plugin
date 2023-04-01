@@ -10,7 +10,7 @@ packages = [{include = "mkdocs_caseinsensitive_plugin"}]
 [tool.poetry.dependencies]
 python = "^3.10"
 mkdocs = "^1.4.2"
-regex = "^2022.10.31"
+regex = ">=2022.10.31,<2024.0.0"
 
 [tool.poetry.plugins]
 
