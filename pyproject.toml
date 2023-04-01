@@ -24,7 +24,7 @@ flake8 = "^6.0.0"
 pyproject-flake8 = "^6.0.0"
 mypy = "^0.991"
 pytest = "^7.2.0"
-types-regex = "^2022.10.31.3"
+types-regex = ">=2022.10.31.3,<2024.0.0.0"
 
 [tool.flake8]
 max-line-length = 88
