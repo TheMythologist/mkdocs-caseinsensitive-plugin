@@ -668,14 +668,14 @@ files = [
 
 [[package]]
 name = "types-regex"
-version = "2022.10.31.6"
+version = "2023.3.23.1"
 description = "Typing stubs for regex"
 category = "dev"
 optional = false
 python-versions = "*"
 files = [
-    {file = "types-regex-2022.10.31.6.tar.gz", hash = "sha256:4b552e26afb01597d0a53a3bf4fe5892736c7178ae6e3d9d9b919168e58a6875"},
-    {file = "types_regex-2022.10.31.6-py3-none-any.whl", hash = "sha256:0e5917db2ed629b7a658091576cc758fedf48397eae1aa9b085ae3ccfae225f2"},
+    {file = "types-regex-2023.3.23.1.tar.gz", hash = "sha256:9752f34d91c44109aee608aa27abe09d6a1e512d2a70a5492ddaedee10e559f3"},
+    {file = "types_regex-2023.3.23.1-py3-none-any.whl", hash = "sha256:3beef7ce8f1b39591dd825bbd482ebe79ed11cfd1a62f1b9ad7c76d60491b5a8"},
 ]
 
 [[package]]
@@ -734,4 +734,4 @@ watchmedo = ["PyYAML (>=3.10)"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "3b386e78102ccf5bcd4d4248b0a9fdb1db75512e4b595c4ed959e7ee3dc052ba"
+content-hash = "ed0d711639b3743c59eae7871bbab3b706cbb817825894581b43c90525c1fb15"
